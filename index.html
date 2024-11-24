@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Charge A Phone</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #step { margin: 20px 0; }
+        #recommendations { display: none; margin-top: 20px; }
+        button { padding: 10px 15px; }
+    </style>
+</head>
+<body>
+    <h1>How To Charge A Phone</h1>
+    <div id="step">Step 1: Find a compatible charger.</div>
+    <button id="continue">Continue</button>
+    <div id="recommendations">
+        <h2>Now What?</h2>
+        <ul>
+            <li>Do: Use the original charger.</li>
+            <li>Don't: Overcharge your phone.</li>
+            <li>Do: Turn off the phone while charging if you want it to charge faster.</li>
+            <li>Don't: Use your phone heavily while charging.</li>
+        </ul>
+    </div>
+    
+    <script>
+        const steps = [
+            "Step 1: Find a compatible charger.",
+            "Step 2: Plug the charger into a power source.",
+            "Step 3: Connect the charger to your phone.",
+            "Step 4: Wait for your phone to charge.",
+            "Step 5: Unplug the charger when fully charged."
+        ];
+
+        let currentStep = 0;
+
+        document.getElementById('continue').addEventListener('click', function() {
+            currentStep++;
+            if (currentStep < steps.length) {
+                document.getElementById('step').innerText = steps[currentStep];
+            } else {
+                document.getElementById('step').style.display = 'none';
+                document.getElementById('recommendations').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
